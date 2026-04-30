@@ -39,7 +39,7 @@ std::set<int> compliment(std::set<int> &L, std::set<int> &R) { // creates/return
 // for the power function I got the main algorithm of this from Geekforgeeks and Chatgpt(it explains how it works). Here is the link to Geekforgeeks
 // https://www.geeksforgeeks.org/dsa/power-set/
 std::set<std::string> power(std::set<int> &x) { // creates/returns a power set from inputted set
-  std::set<std::string> powr = {"0"};
+  std::set<std::string> powr = {"{}"};
   std::vector<int> map(x.begin(), x.end());
   int set_size = map.size();
   int range = (1 << set_size);
