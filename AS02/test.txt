@@ -1,4 +1,4 @@
-123 choose 567
-456 permute 789
-rderangement 698
-derangement 697
+20 choose 5
+13 permute 5
+rderangement 6
+derangement 6
