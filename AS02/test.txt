@@ -1,6 +1,0 @@
-14 choose 5
-300 choose 3
-20 choose 14
-14 permute 5
-300 permute 3
-20 permute 14
