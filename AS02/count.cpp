@@ -9,12 +9,14 @@
 Counter::Counter() {}
 Counter::~Counter() {}
 
-int Counter::choose(int x, int y) {
+// I found this short code from stackoverflow here is the link: 
+// https://stackoverflow.com/questions/9330915/number-of-combinations-n-choose-r-in-c
+long Counter::choose(int x, int y) {
     if (y == 0) return 1;
     return (x * choose(x - 1, y - 1)) / y;
 }
 
-int Counter::permute(int x , int y) {
+long Counter::permute(int x , int y) {
   double a = 1;  // x !
   double c = 1;  // (x - y) !
 
@@ -25,31 +27,18 @@ int Counter::permute(int x , int y) {
   return a/c;
 }
 
-int Counter::rderangement(int x) {
+// I like to reference Alan for this code, he helped me out with it!
+unsigned int Counter::rderangement(int x) {
   if(x == 0) return 1;
-  if(x == 1) return 0;
-
-    
+  if(x == 1) return 0;    
   return (x-1)*(rderangement(x-1)+rderangement(x-2));
 }
 
-int Counter::derangement(int x) {
-  if(x == 0) return 1;
-  if(x == 1) return 0;
-
-  double n = 1;
-  double k = 1;
-  bool alternate = true;
-  for(int i = 1; i <= x; ++i) {
-    n *= i;
-    if(alternate) {
-      k -= (1/n);
-      alternate = false;
-    } else {
-      k += (1/n);
-      alternate = true;
-    }
+unsigned int Counter::derangement(int x) {
+  if(x >= 0 && x <= 13) {
+    return known_derangements[x];
+  } else {
+    return 0;
   }
-
-  return n * k;
 }
+

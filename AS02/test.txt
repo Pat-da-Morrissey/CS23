@@ -1,4 +1,6 @@
-20 choose 5
-13 permute 5
-rderangement 6
-derangement 6
+14 choose 5
+300 choose 3
+20 choose 14
+14 permute 5
+300 permute 3
+20 permute 14

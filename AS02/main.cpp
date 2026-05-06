@@ -1,3 +1,8 @@
+/*
+  Patrick Morrissey pmorriss morrisseypd369@gmail.com
+  main.cpp - Assignment 02 (Count)
+*/ 
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -24,7 +29,8 @@ int main(int argc, char *argv[]) {
       commands.push_back(param);
     }
 
-
+// The code I got inspiration for the stringstream is from geekforgeeks here is the link:
+// https://www.geeksforgeeks.org/cpp/stringstream-c-applications/
     std::stringstream ss0(commands[0]);
     int num;
     char dump;
@@ -48,11 +54,15 @@ int main(int argc, char *argv[]) {
 
       if(commands[0] == "rderangement") { // rderangement
         if(commands.size() == 2 && isNum) {
-          std::cout << Count.rderangement(std::stoi(commands[1])) << std::endl;
+          if(std::stoi(commands[1]) <= 13) {
+            std::cout << Count.rderangement(std::stoi(commands[1])) << std::endl;
+          }
         }
       } else if(commands[0] == "derangement") { // derangement
         if(commands.size() == 2 && isNum) {
-          std::cout << Count.derangement(std::stoi(commands[1])) << std::endl;
+          if(std::stoi(commands[1]) <= 13) {
+            std::cout << Count.derangement(std::stoi(commands[1])) << std::endl;
+          }
         }
       } else { // error
         std::cout << "Error could not process this line!";
@@ -63,3 +73,4 @@ int main(int argc, char *argv[]) {
 
   return 0;
 }
+
